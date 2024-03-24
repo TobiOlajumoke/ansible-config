@@ -22,7 +22,8 @@ pipeline {
          steps{
             git branch: 'main', url: 'https://github.com/TobiOlajumoke/ansible-config'
          }
-       }
+         }
+       
 
       stage('Prepare Ansible For Execution') {
         steps {
@@ -33,7 +34,7 @@ pipeline {
 
       stage('Run Ansible playbook') {
         steps {
-           ansiblePlaybook become: true, colorized: true, credentialsId: 'private_key', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory/$(inventory)', playbook: 'playbooks/site.yml'
+           ansiblePlaybook become: true, colorized: true, credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory/${inventory}', playbook: 'playbooks/site.yml'
          }
       }
 
@@ -42,6 +43,6 @@ pipeline {
           cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenUnstable: true, deleteDirs: true)
         }
       }
-   }
+  }
 
 }
