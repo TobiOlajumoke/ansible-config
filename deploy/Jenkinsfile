@@ -23,7 +23,7 @@ pipeline {
             git branch: 'main', url: 'https://github.com/TobiOlajumoke/ansible-config'
          }
          }
-       }
+       
 
       stage('Prepare Ansible For Execution') {
         steps {
@@ -43,5 +43,6 @@ pipeline {
           cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenUnstable: true, deleteDirs: true)
         }
       }
-   }
+  }
 
+}
