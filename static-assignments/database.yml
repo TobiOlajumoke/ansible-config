@@ -2,4 +2,4 @@
 - hosts: db
   become: true
   roles:
-     - /absolute/path/to/mysql
+     - mysql
