@@ -50,15 +50,15 @@
 
     - name: Download the artifact
       get_url:
-        url: http://44.206.249.43:8081/artifactory/PBL2/php-todo.zip
-        dest: /home/ec2-user/php-todo.zip
+        url: http://44.206.249.43:8082/artifactory/PBL2/php-todo
+        dest: /home/ec2-user/php-todo
         url_username: admin
         url_password: cmVmdGtuOjAxOjE3NDMyNzIzMDQ6ZmdnaWpHQzRzNll3WE40Uk5peGFkVFl3WE5U
 
 
     - name: unzip the artifacts
       ansible.builtin.unarchive:
-       src: /home/ec2-user/php-todo.zip
+       src: /home/ec2-user/php-todo
        dest: /home/ec2-user/
        remote_src: yes
 
