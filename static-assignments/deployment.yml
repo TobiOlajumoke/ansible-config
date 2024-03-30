@@ -50,7 +50,7 @@
 
     - name: Download the artifact
       get_url:
-        url: http://44.206.249.43:8081/artifactory/PBL2/
+        url: http://44.206.249.43:8081/artifactory/PBL2/php-todo
         dest: /home/ec2-user/
         url_username: admin
         url_password: cmVmdGtuOjAxOjE3NDMyNzIzMDQ6ZmdnaWpHQzRzNll3WE40Uk5peGFkVFl3WE5U
@@ -78,4 +78,4 @@
       ansible.builtin.service:
         name: httpd
         state: restarted
-        
+  
